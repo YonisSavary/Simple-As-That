@@ -1,0 +1,73 @@
+@for $w from 0 to 6 {
+    .m-#{$w}  { margin: $w*0.5rem; }
+    .ml-#{$w} { margin-left: $w*0.5rem; }
+    .mt-#{$w} { margin-top: $w*0.5rem; }
+    .mr-#{$w} { margin-right: $w*0.5rem; }
+    .mb-#{$w} { margin-bottom: $w*0.5rem; }
+    
+    .p-#{$w}  { padding: $w*0.5rem; }
+    .pl-#{$w} { padding-left: $w*0.5rem; }
+    .pt-#{$w} { padding-top: $w*0.5rem; }
+    .pr-#{$w} { padding-right: $w*0.5rem; }
+    .pb-#{$w} { padding-bottom: $w*0.5rem; }
+}
+
+.flex-row    { display: flex; flex-direction: row; }
+.flex-column { display: flex; flex-direction: column; }
+.flex-filler { flex: 1 1 0px; }
+
+.flex-start     { justify-content: flex-start; align-content: flex-start; }
+.flex-end       { justify-content: flex-end; align-content: flex-end;}
+.justify-center { justify-content: center; }
+.align-center   { align-items: center; }
+
+.flex-row .separator, .separator-h
+{
+    border: none;
+    margin: 0rem 1rem;
+    border-left: $border-weight*0.5 solid #FFF;
+    min-height: 1rem;
+}
+
+.flex-column .separator, .separator-v
+{
+    border: none;
+    margin: 1rem 0rem;
+    width: 50%;
+    min-width: 100px;
+    border-top: $border-weight*0.5 solid #FFF;
+}
+
+.flex-row       .spaced { margin: 0rem $spacedFactor*2rem; }
+.flex-column    .spaced, .spaced { margin: $spacedFactor*2rem 0rem; }
+.flex-row       .little-spaced { margin: 0rem $spacedFactor*1rem; }
+.flex-column    .little-spaced { margin: $spacedFactor*1rem 0rem; }
+.aerial * { @extend .little-spaced; }
+
+.main .separator
+{
+    border-color: var(--font-color) !important;
+}
+
+.topbar .separator
+{
+    border-color: white !important;
+}
+
+.main
+{
+    padding: 2rem;
+}
+
+.main.classical
+{
+    @extend .flex-column;
+    width: 60%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.main.classical *
+{
+    @extend .little-spaced;
+}

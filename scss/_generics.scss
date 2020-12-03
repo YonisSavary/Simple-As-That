@@ -1,0 +1,36 @@
+
+.pretty-text { font-family: $font-title; }
+.text-center { text-align: center;}
+.text-left { text-align: left; }
+.little { font-size: 0.8rem;}
+
+.debug { border: 1px solid magenta !important }
+
+@for $i from 1 to 6 {
+    h#{$i}{
+        font-size: ($i*-0.25rem)+2.25rem;
+        font-family: $font-title;
+        text-decoration: underline;
+    }
+}
+
+li 
+{ 
+    padding: 1rem;
+    border-bottom: var(--font-color) 1px solid;
+}
+
+li:last-of-type
+{
+    border: none;
+}
+
+p
+{
+    max-width: 1000px;
+}
+
+.main a, .main a:visited
+{
+    color: $color-primary-1;
+}

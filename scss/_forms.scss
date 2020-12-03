@@ -1,0 +1,63 @@
+input, .input, button, textarea
+{
+    font-size: 0.8rem;
+    padding: 0.3rem;
+    font-family: $font-text;
+    color: $dark-gray;
+    border: solid $border-weight*0.5 $dark-gray;
+    border-radius: 0.5rem;
+    margin: 0.2rem;
+    max-width: 600px;
+}
+
+@function buttonBackground($bg){
+    @return linear-gradient(140deg, lighten($bg, 5), $bg, darken($bg, 3));
+}
+
+.button
+{
+    @extend .pretty-text;
+    width: max-content;
+    padding: 0.3rem 1rem;
+    min-width: 40px;
+    font-size: 1rem;
+    border: none;
+    background: buttonBackground(#CCC);
+    color: $dark-gray;
+    cursor: pointer;
+    box-shadow: $box-shadow-light;
+}
+
+.button.dark
+{
+    background: buttonBackground($dark-gray);
+    color: $light-gray;
+}
+
+.button.primary
+{
+    background: buttonBackground($color-primary-1);
+    color: $light-gray;
+}
+
+.button:active
+{
+    box-shadow: $box-shadow-ultralight;
+}
+
+table
+{
+    border-collapse: collapse;
+}
+
+td,th
+{
+    padding: 0.3rem;
+    border-left: solid 1px var(--font-color); 
+    border-right: solid 1px var(--font-color); 
+}
+
+tr
+{
+    border: solid 1px var(--font-color); 
+}

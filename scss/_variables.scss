@@ -1,0 +1,67 @@
+// Noto Sans for text
+// Sansita Swached for titles
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Sansita+Swashed:wght@300;600;800&display=swap');
+
+$font-title : "Sansita Swashed";
+$font-text : "Noto Sans";
+
+// Default Root font-size, I use it EVERYWHERE
+// to scale elements properly, so affecting this
+// variable affect the whole stylesheet
+// (it won't destroy the stylesheet but rescale it)
+$rem_default: 24px;
+
+// ------- COLOR CODES -------
+// color-primary from 0 to 4 are necessary 
+// you can generate them from paletton.com if you want
+// (when you choosed your colors : go to TABLES/EXPORT -> as SASS)
+//*
+$color-primary-0: #003800;	// Main Primary color
+$color-primary-1: #187718;
+$color-primary-2: #035503;
+$color-primary-3: #001F00;
+$color-primary-4: #000B00;
+
+$color-secondary-1-0: #462000;	// Main Secondary color (1)
+$color-secondary-1-1: #94531D;
+$color-secondary-1-2: #6B3203;
+$color-secondary-1-3: #261100;
+$color-secondary-1-4: #0E0600;
+
+// Light-gray and dark-gray are
+// used a lot to declares themes and font colors !
+$light-gray: #DDD;
+$dark-gray: #333;
+
+// Useful for .spaced and .little-spaced
+// The more spacedFactor is big, the more the 
+// concerned elements will be spaced
+// (.spaced and .little-spaced are designed to
+// work well in flex-row and flex-column classes)
+$spacedFactor : 1.5;
+
+// The base border-weight used in the other files
+// Usually multiplied by another factor to fix scales
+$border-weight: 3px;
+
+// Pre-made Box-shadow properties, used particulary on 
+// the topbar and inputs elements
+$box-shadow-medium: 0 0 2rem rgba(0,0,0,0.5);
+$box-shadow-light:  0 0 .5rem rgba(0,0,0,0.5);
+$box-shadow-ultralight:  0 0 .5rem rgba(0,0,0,0.2);
+
+
+// ------- Properties for the topbar -------
+$topbar-items-font : $font-title;
+// topbar-menu concern submenu sections !
+$topbar-menu-bg: white;
+$topbar-menu-border: solid $border-weight*1.5 $color-primary-0;
+$topbar-menu-radius: 0.5rem;
+$topbar-menu-font-size: 0.8rem;
+$topbar-menu-font-color: $color-primary-0;
+
+/**
+ * Note :
+ * root.scss declare a global pure-css variable named --font-color
+ * it contain the color used for the text in the main elements
+*/

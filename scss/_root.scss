@@ -1,0 +1,27 @@
+:root
+{
+    font-size: $rem_default;
+}
+
+html, body
+{
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    font-family: $font-text;
+    color: $dark-gray;
+    background-color: $light-gray;
+    --font-color : #{$dark-gray};
+}
+
+body.dark
+{
+    background-color: lighten(desaturate($color-primary-4, 80), 5);
+    color: $light-gray;
+    --font-color : #{$light-gray};
+}

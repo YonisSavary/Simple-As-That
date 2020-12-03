@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>{% if title %}{{ title }}{{ else }}Simple As That !{{ endif }}</title>
+</head>
+<body>
+    <section class="topbar">
+        <a class="flex-row align-center"href="/">
+            <img src="img/SAT_logo.png" alt="SimpleAsThat Logo" class="topbar-logo">
+        </a>
+        <section class="separator-h"></section>
+        <section class="topbar-items">
+        {% block topbar %}
+        {% endblock %}
+        </section>
+        <section class="flex-filler"></section>
+        <form class="topbar-search" action="/search">
+            <input type="text" placeholder="Looking for what ?" name="query">
+            <input type="submit" class="button primary pretty-text" value="Search">
+        </form>
+    </section>
+    <section class="main">
+        {% block content %}
+        <a href="Woaw">Woaw</a>
+        <h1>Thanks you for using SAT ! ✌️</h1>
+        <p>
+            ############### IMPORTANT ###############<br>
+            THIS DOCUMENTATION CAN HELP YOU TO DEBUG SOME PAGES<br>
+            IF YOU SEE IT, THEN SOMETHING'S DEFINITLY WRONG<br>
+            <br>
+            FOR THOSE WHO WANT TO DELETE QUICKLY THIS DOCUMENTATION<br>
+            THERE IS A SAFE-TO-DELETE END LABEL AT THE END OF THE FILE<br>
+            YOU CAN DELETE EVERYTHING BETWEEN THERE AND THIS CURRENT LINE<br>
+        </p>
+        <section class="spaced">
+            <h2>Let's begin</h2>
+            <strong>
+                You can begin to put some content by completing 'topbar' or 'content' blocks ! 
+            </strong>
+            <p>
+                Also you can personalize the importants parts of the stylesheet in 'scss/_variables.scss'
+                <br>(I try to keep the SCSS files well-documented so you can give it an eye if you want)
+            </p>
+            <p>Here is some classes that you can already use :</p>
+            <table class="spaced">
+                <tr>
+                    <th>Class</th>
+                    <th>What do it do ?</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td class="little">[mp]-[ltrb-][0-4]</td>
+                    <td class="little">Classical margin/padding, their directions, and a factor between 0 and 4 </td>
+                </tr>
+                <tr>
+                    <td class="little">flex-[row|column]</td>
+                    <td class="little">Classical flex directions</td>
+                </tr>
+                <tr>
+                    <td class="little">[little]-spaced</td>
+                    <td class="little">Add spacing depending if we are in a flex-row or flex-column element </td>
+                </tr>
+                <tr>
+                    <td class="little">pretty-text</td>
+                    <td class="little">Use the same font used for titles ($font-title)</td>
+                    <td class="text-center">
+                        <section class="flex-column">
+                            <span>Normal text</span>
+                            <span class="pretty-text">Aesthetic Intensifies</span>
+                        </section>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="little">button [|dark|primary]</td>
+                    <td class="little">Gives an element a button style, 'dark' and 'primary' classes can be added to change the color
+                        theme of the element, by default a button is gray </td>
+                    <td>
+                        <section class="flex-column align-center">
+                            <button class='button'>Default</button>
+                            <button class='button primary'>Primary</button>
+                            <button class='button dark'>Dark</button>
+                        </section>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="little">little</td>
+                    <td class="little">Downside the font-size of an element</td>
+                    <td class="text-center">
+                        <section class="flex-column">
+                            <span>Normal text</span>
+                            <span class="little">Little element</span>
+                        </section>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="little">[text-justify-align]-center</td>
+                    <td class="little">Allow you to center things in multiples ways</td>
+                </tr>
+                <tr>
+                    <td class="little">separator</td>
+                    <td class="little">Visual separator (same propertie as .spaced, it detect horizontal and vertical environment)</td>
+                    <td>
+                        <section class="flex-row align-center">
+                            <span>Horizontal</span>
+                            <div class="separator"></div>
+                            <span>Separator</span>
+                        </section>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="little">separator-[vh]</td>
+                    <td class="little">Forced use of a separator ('v' for vertical and 'h' for horizontal)</td>
+                </tr>
+            </table>
+            <!-- #### TOPBAR #### -->
+            <section class="spaced">
+                <h2>Topbar Usage</h2>
+                <p>Here is an example of a topbar menu</p>
+                <pre>
+                    &lt;a class="topbar-menu-title"&gt;foo&lt;/a&gt;
+                    &lt;section class="topbar-menu"&gt;
+                        &lt;a href="#blah"&gt;Link1&lt;/a&gt;
+                        &lt;a href="#blah"&gt;Link2&lt;/a&gt;
+                        &lt;a href="#blah"&gt;Bruh&lt;/a&gt;
+                    &lt;/section&gt;
+                    &lt;a class="topbar-item"&gt;bar&lt;/a&gt;
+                </pre>
+                <p>
+                    This Code will create two elements, one named "foo" 
+                    with a sub-menu, and one direct link named "bar"
+                </p>
+                <strong>
+                    Note: it is mandatory to have a .topbar-menu-title just before a .topbar-menu element,
+                    or else it won't work properly
+                </strong>
+            </section>
+            <!-- #### MORE CLASSES #### -->
+            <section class="spaced">
+                <h2>Body customization</h2>
+                <p>There are some classes that you can add to the body and main elements :</p>
+                <details>
+                    <summary>body.dark</summary>
+                    <p>Transform the color scheme of the body (not the topbar)<br> to be more pleasant to the eyes</p>
+                </details>
+                <details>
+                    <summary>main.classical</summary>
+                    <p>Limit the width of the main element (basically the content block) to 60% or 1000px</p>
+                </details>
+            </section>
+            <section class="spaced">
+                <h2>SASS Customization</h2>
+                <p>
+                    Of course the best way to customize your SAT setup is to 
+                    edit the variables file (almost all variables are explained),
+                    but before you dive into it, let me explain the purpose of each files
+                </p>
+                <ul>
+                    <li>variables.scss | the file that might interest you, it contain what you need to customize SAT
+                        <br>(more documentation on this file in the file itself)</li>
+                    <li>forms.scss | all inputs, buttons, tables... </li>
+                    <li>generics.scss | so far, its some text properties</li>
+                    <li>layout.scss | everythings that touch the page organization (flexboxes, spacings...)</li>
+                    <li>root.scss | most direct properties for root, html and body elements</li>
+                    <li>topbar.scss | only classes for topbar items and submenus</li>
+                    <li>SAT.scss.scss | the file to compile, it is here only to contain all of the other files</li>
+                </ul>
+            </section>
+        </section>
+        <!-- ################################################## -->
+        <!-- ############### END SAFE-TO-DELETE ############### -->
+        <!-- ################################################## -->
+
+        {% endblock %}
+    </section>
+</body>
+<script defer src="js/jquery-3.5.1.min.js"></script>
+<script defer src="js/topbar.js"></script>
+</html>
